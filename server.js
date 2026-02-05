@@ -12,10 +12,7 @@ const PORT = process.env.PORT;
 const MONGO_CS = process.env.MONGO_CS;
 
 
-//Conexion a MongoDB Atlas
-if (!mongoose.connection.readyState) {
-    await mongoose.connect(process.env.MONGO_CS);
-}
+connectDB();
 
 //Middleware para JSON
 app.use(express.json());
