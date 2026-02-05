@@ -29,6 +29,3 @@ app.get('/api/v1/hello', hello);
 app.get('/api/v1/saludo/:nombre', saludo);
 
 
-app.listen(PORT, () => {
-    console.log(`Servidor corriendo en http://localhost:${PORT}`);
-})
