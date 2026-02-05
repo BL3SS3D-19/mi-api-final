@@ -1,7 +1,7 @@
 import 'dotenv/config';
 import express from 'express';
-import { getUsuarios } from './api/v1/usuarios.js';
-import { hello } from './api/v1/hello.js';
+import getUsuarios from './api/v1/usuarios.js';
+import hello from './api/v1/hello.js';
 import saludo from './api/v1/saludo.js';
 import { connectDB } from './db.js';
 
