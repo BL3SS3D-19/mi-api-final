@@ -13,7 +13,9 @@ const MONGO_CS = process.env.MONGO_CS;
 
 
 //Conexion a MongoDB Atlas
-connectDB();
+if (!mongoose.connection.readyState) {
+    await mongoose.connect(process.env.MONGO_CS);
+}
 
 //Middleware para JSON
 app.use(express.json());
@@ -26,6 +28,4 @@ app.get('/api/v1/usuarios', getUsuarios);
 app.get('/api/v1/hello', hello);
 app.get('/api/v1/saludo/:nombre', saludo);
 
-app.listen(PORT, () => {
-    console.log(`Servidor corriendo a la escucha en el puerto ${PORT}`)
-})
+
